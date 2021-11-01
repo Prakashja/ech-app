@@ -39,5 +39,17 @@ pipeline{
                 }
             }
         }
+        stage('Deployment_validation'){
+            steps{
+                script{
+                    sh '''
+		    curl -vk http://65.1.131.185:8090/wish
+                    curl -vk http://65.1.131.185:8090/info
+                    curl -vk http://13.127.18.204:8090/status
+                    '''
+                }
+            }
+        }
+
     }
 }
