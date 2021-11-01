@@ -43,6 +43,10 @@ pipeline{
             steps{
                 script{
                     sh '''
+                    echo "running validation test for the app"
+                    sleep 60sec
+                    echo "running validation test ..."
+                    echo "running validation test ....."
 		    curl -vk http://65.1.131.185:8090/wish
                     curl -vk http://65.1.131.185:8090/info
                     curl -vk http://13.127.18.204:8090/status
