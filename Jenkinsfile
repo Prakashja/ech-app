@@ -29,5 +29,14 @@ pipeline{
                 }
             }
         }
+        stage('Deploy'){
+            steps{
+                script{
+                    sh '''
+                    ansible-playbook -i remote-details application.yaml  --extra-vars "version=sana03/myrestapi:${BUILD_NUMBER}" 
+                    '''
+                }
+            }
+        }
     }
 }

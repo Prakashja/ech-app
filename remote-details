@@ -1,0 +1,17 @@
+[frontend:vars]
+ansible_ssh_private_key_file=devops-key.pem
+ansible_user=ec2-user
+host_key_checking = False
+ansible_python_interpreter=/usr/bin/python
+
+[frontend]
+65.1.131.185
+3.110.32.37
+
+[backend:vars]
+ansible_ssh_private_key_file=devops-key.pem
+ansible_user=ec2-user
+host_key_checking = False
+ansible_python_interpreter=/usr/bin/python
+[backend]
+13.127.18.204
