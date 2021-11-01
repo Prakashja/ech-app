@@ -1,0 +1,37 @@
+- hosts: all
+  become: true
+  vars:
+   app_version: "{{ version }}"
+  tasks:
+    - name: Yum repolist for Docker
+      yum_repository:
+        name: docker
+        description: yum repository for docker
+        baseurl: https://download.docker.com/linux/centos/7/x86_64/stable/
+        gpgcheck: no
+
+    - name: Package Installer For Docker
+      package:
+        name: docker
+        state: present
+
+    - name: Package Installer For Python3 
+      package:
+        name: python3
+        state: present
+
+    - name: Installing python library for the Docker Remote API
+      pip:
+        name: docker-py
+
+    - name: Start service docker
+      service:
+        name: docker
+        state: started
+    - name: Create a web container
+      docker_container:
+        name: backend
+        image: "{{ app_version }}"
+        ports:
+                - "8090:8090"
+        
