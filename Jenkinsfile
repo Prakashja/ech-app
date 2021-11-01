@@ -33,6 +33,7 @@ pipeline{
             steps{
                 script{
                     sh '''
+                    chmod 400 devops-key.pem
                     ansible-playbook -i remote-details application.yaml  --extra-vars "version=sana03/myrestapi:${BUILD_NUMBER}" 
                     '''
                 }
