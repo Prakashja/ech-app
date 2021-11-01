@@ -44,7 +44,7 @@ pipeline{
                 script{
                     sh '''
                     echo "running validation test for the app"
-                    sleep 60sec
+                    sleep 30s
                     echo "running validation test ..."
                     echo "running validation test ....."
 		    curl -vk http://65.1.131.185:8090/wish
