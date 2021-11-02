@@ -47,9 +47,9 @@ pipeline{
                     sleep 30s
                     echo "running validation test ..."
                     echo "running validation test ....."
-		    curl -vk http://65.1.131.185:8090/wish
-                    curl -vk http://65.1.131.185:8090/info
-                    curl -vk http://13.127.18.204:8090/status
+		    curl -vk http://13.232.162.181:8090/wish
+                    curl -vk http://65.0.81.177:8090/info
+                    curl -vk http://13.127.127.199:8090/status
                     '''
                 }
             }
