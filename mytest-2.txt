@@ -1,3 +1,7 @@
 this file is editing by developer-2
 
+<<<<<<< HEAD
 # this files is created to test te conflict of code changes
+=======
+developer-1 please add some comments in this files so that other developers will understand what you doing in this files
+>>>>>>> 25a05a8253409c653cb73efa772ac343125e57c2
